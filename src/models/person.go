@@ -16,6 +16,9 @@ func NewPersonM(rep repository.PersonRep, models *Models) *PersonM {
 }
 
 func (model *PersonM) Create(obj *objects.Person) error {
+	if err := obj.Validate(); err != nil {
+		return err
+	}
 	if err := model.rep.Create(obj); err != nil {
 		return errors.DBAdditionError
 	}

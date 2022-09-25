@@ -6,10 +6,24 @@ import (
 	"net/http"
 )
 
+type validationErrors struct {}
+type validationErrorResponse struct {
+	Message		string				`json:"message"`
+	Errors		validationErrors	`json:"errors"`
+}
+
 func BadRequest(w http.ResponseWriter, msg string) {
-	w.Header().Set("Content-Type", "text/plain; charset=UTF-8")
+	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.WriteHeader(http.StatusBadRequest)
 	json.NewEncoder(w).Encode(msg)
+}
+
+func ValidationErrorResponse(w http.ResponseWriter) {
+	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	w.WriteHeader(http.StatusBadRequest)
+
+	resp := &validationErrorResponse{"Request validation failed", validationErrors{}}
+	json.NewEncoder(w).Encode(resp)
 }
 
 func RecordNotFound(w http.ResponseWriter, recType string) {

@@ -31,6 +31,17 @@ func (obj *Person) ToDTO() *PersonDTO {
 	return dto
 }
 
+func (obj *Person) Validate() error {
+	if obj.Name == "" {
+		return errors.InvalidPerson
+	} else if obj.Age < 0 {
+		return errors.InvalidPerson
+	} else {
+		return nil
+	}
+}
+
+
 func (Person) ArrToDTO(src []Person) []PersonDTO {
 	dst := make([]PersonDTO, len(src))
 	for k, v := range src {

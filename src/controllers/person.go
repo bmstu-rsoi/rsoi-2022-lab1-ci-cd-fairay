@@ -40,6 +40,8 @@ func (ctrl *personCtrl) add(w http.ResponseWriter, r *http.Request) {
 	switch err {
 	case nil:
 		responses.SuccessPersonCreation(w, new_person.Id)
+	case errors.InvalidPerson:
+		responses.ValidationErrorResponse(w)
 	default:
 		responses.BadRequest(w, "Error adding to the DB")
 	}
