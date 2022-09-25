@@ -29,7 +29,7 @@ func TestCreatePerson(t *testing.T) {
 
 	t.Run("invalid name", func(t *testing.T) {
 		mockRep := new(mocks.PersonRep)
-		
+
 		model := models.NewPersonM(mockRep, nil)
 		obj := &objects.Person{
 			Id: 0, Age: 31,
@@ -99,14 +99,14 @@ func TestPatch(t *testing.T) {
 		mockRep := new(mocks.PersonRep)
 		model := models.NewPersonM(mockRep, nil)
 		patch := &objects.Person{
-			Age: 31,
+			Age:     31,
 			Address: "9124 Jacobi Flats",
 		}
 		upd_obj := &objects.Person{
 			Id: 10, Name: "Celestino.Murazik88", Age: 31,
 			Address: "9124 Jacobi Flats", Work: "Beatty - Cronin",
 		}
-		
+
 		mockRep.On("Patch", patch).Return(upd_obj, nil).Once()
 
 		res, err := model.Patch(patch)

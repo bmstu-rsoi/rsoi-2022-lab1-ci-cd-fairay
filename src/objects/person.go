@@ -41,7 +41,6 @@ func (obj *Person) Validate() error {
 	}
 }
 
-
 func (Person) ArrToDTO(src []Person) []PersonDTO {
 	dst := make([]PersonDTO, len(src))
 	for k, v := range src {
@@ -67,4 +66,3 @@ func (obj *PersonDTO) Validate() error {
 		return nil
 	}
 }
-

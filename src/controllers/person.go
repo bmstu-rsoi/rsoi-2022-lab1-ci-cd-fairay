@@ -33,7 +33,7 @@ func (ctrl *personCtrl) add(w http.ResponseWriter, r *http.Request) {
 	if err != nil || person_dto.Validate() != nil {
 		responses.BadRequest(w, "Invalid data")
 		return
-	} 
+	}
 
 	new_person := person_dto.ToModel()
 	err = ctrl.model.Create(new_person)

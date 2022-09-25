@@ -6,10 +6,10 @@ import (
 	"net/http"
 )
 
-type validationErrors struct {}
+type validationErrors struct{}
 type validationErrorResponse struct {
-	Message		string				`json:"message"`
-	Errors		validationErrors	`json:"errors"`
+	Message string           `json:"message"`
+	Errors  validationErrors `json:"errors"`
 }
 
 func BadRequest(w http.ResponseWriter, msg string) {
