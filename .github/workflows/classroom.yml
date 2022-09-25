@@ -3,9 +3,6 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
 jobs:
   build:
     name: Autograding
@@ -15,15 +12,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      # TODO build, test and deploy project
-
-      - name: Run API Tests
-        uses: matt-ball/newman-action@master
+      - name: Deploy project
+        uses: akhileshns/heroku-deploy@v3.4.6
         with:
-          collection: postman/[inst] Lab1.postman_collection.json
-          environment: postman/[inst][heroku] Lab1.postman_environment.json
-          delayRequest: 100
-          reporters: '[ "cli" ]'
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          usedocker: true
 
       - name: Autograding
         uses: education/autograding@v1
