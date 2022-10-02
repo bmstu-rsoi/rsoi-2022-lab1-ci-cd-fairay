@@ -3,6 +3,7 @@ package controllers
 import (
 	"fmt"
 	"net/http"
+	"os"
 	"rsoi-lab1/models"
 	"rsoi-lab1/utils"
 
@@ -29,5 +30,6 @@ func InitRouter(db *gorm.DB) *mux.Router {
 func RunRouter(r *mux.Router, port uint16) error {
 	c := cors.New(cors.Options{})
 	handler := c.Handler(r)
-	return http.ListenAndServe(fmt.Sprintf("0.0.0.0:%d", port), handler)
+	envport := os.Getenv("PORT")
+	return http.ListenAndServe(fmt.Sprintf("0.0.0.0:%s", envport), handler)
 }
