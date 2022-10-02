@@ -18,6 +18,7 @@ import (
 func initDBConnection(cnf utils.DBConfiguration) *gorm.DB {
 	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable",
 		cnf.Host, cnf.User, cnf.Password, cnf.Name, cnf.Port)
+	dsn = "postgres://aswlkykhyqpeyq:f7a1c77fa6528c3bb42f5e7855eee2737daf8c114ca6b47fa40217712e1f491c@ec2-44-208-88-195.compute-1.amazonaws.com:5432/d8pq4eb48oelse"
 	db, e := gorm.Open(cnf.Type, dsn)
 
 	if e != nil {
