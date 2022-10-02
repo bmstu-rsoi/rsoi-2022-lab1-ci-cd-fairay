@@ -1,7 +1,7 @@
 package models
 
 import (
-	"rsoi/lab1/repository"
+	"rsoi-lab1/repository"
 
 	"github.com/jinzhu/gorm"
 )

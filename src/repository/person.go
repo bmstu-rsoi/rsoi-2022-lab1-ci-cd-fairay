@@ -1,8 +1,8 @@
 package repository
 
 import (
-	"rsoi/lab1/errors"
-	"rsoi/lab1/objects"
+	"rsoi-lab1/errors"
+	"rsoi-lab1/objects"
 
 	"github.com/jinzhu/gorm"
 )

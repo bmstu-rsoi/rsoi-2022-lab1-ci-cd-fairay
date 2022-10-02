@@ -1,10 +1,10 @@
 package controllers
 
 import (
-	"rsoi/lab1/controllers/responses"
-	"rsoi/lab1/errors"
-	"rsoi/lab1/models"
-	"rsoi/lab1/objects"
+	"rsoi-lab1/controllers/responses"
+	"rsoi-lab1/errors"
+	"rsoi-lab1/models"
+	"rsoi-lab1/objects"
 	"strconv"
 
 	"encoding/json"

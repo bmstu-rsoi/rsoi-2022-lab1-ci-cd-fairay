@@ -2,7 +2,7 @@ package objects
 
 import (
 	"encoding/json"
-	"rsoi/lab1/errors"
+	"rsoi-lab1/errors"
 )
 
 type Person struct {

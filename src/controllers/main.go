@@ -3,8 +3,8 @@ package controllers
 import (
 	"fmt"
 	"net/http"
-	"rsoi/lab1/models"
-	"rsoi/lab1/utils"
+	"rsoi-lab1/models"
+	"rsoi-lab1/utils"
 
 	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm"

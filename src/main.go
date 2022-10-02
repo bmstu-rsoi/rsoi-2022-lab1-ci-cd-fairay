@@ -2,9 +2,9 @@ package main
 
 import (
 	"errors"
-	"rsoi/lab1/controllers"
-	"rsoi/lab1/objects"
-	"rsoi/lab1/utils"
+	"rsoi-lab1/controllers"
+	"rsoi-lab1/objects"
+	"rsoi-lab1/utils"
 
 	"fmt"
 	"math/rand"
@@ -22,7 +22,8 @@ func initDBConnection(cnf utils.DBConfiguration) *gorm.DB {
 
 	if e != nil {
 		utils.Logger.Print("DB Connection failed")
-		utils.Logger.Fatal(e)
+		utils.Logger.Print(e)
+		panic("DB Connection failed")
 	} else {
 		utils.Logger.Print("DB Connection Established")
 	}

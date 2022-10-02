@@ -4,14 +4,14 @@ FROM golang:1.17
 
 WORKDIR /app
 
-COPY src/* .
+COPY src .
 RUN go mod download
 
 RUN mkdir -p logs
 RUN mkdir -p temp
 
-RUN go build -o ./teamdev-backend
+RUN go build -o ./app
 
-EXPOSE 8000
+EXPOSE 8080
 
-CMD [ "./teamdev-backend ./configs/config.json" ]
+CMD [ "./app", "./configs/config.json" ]

@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	objects "rsoi/lab1/objects"
+	objects "rsoi-lab1/objects"
 
 	mock "github.com/stretchr/testify/mock"
 

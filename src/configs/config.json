@@ -3,7 +3,7 @@
         "type": "postgres",
         "user": "program", 
         "password": "test",
-        "host": "localhost",
+        "host": "host.docker.internal",
         "name": "persons",
         "port": "5432"
     },

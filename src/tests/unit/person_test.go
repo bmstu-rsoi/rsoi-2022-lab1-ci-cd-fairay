@@ -1,10 +1,10 @@
 package unit_test
 
 import (
-	"rsoi/lab1/errors"
-	"rsoi/lab1/mocks"
-	"rsoi/lab1/models"
-	"rsoi/lab1/objects"
+	"rsoi-lab1/errors"
+	"rsoi-lab1/mocks"
+	"rsoi-lab1/models"
+	"rsoi-lab1/objects"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
