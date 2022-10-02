@@ -13,5 +13,6 @@ RUN mkdir -p temp
 RUN go build -o ./app
 
 EXPOSE 8080
+ENV PORT=8080
 
 CMD [ "./app", "./configs/config.json" ]
