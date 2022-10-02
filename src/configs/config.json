@@ -1,0 +1,12 @@
+{
+    "db": {
+        "type": "postgres",
+        "user": "program", 
+        "password": "test",
+        "host": "host.docker.internal",
+        "name": "persons",
+        "port": "5432"
+    },
+    "log_file": "logs/%v.log",
+    "port": 8080
+}
