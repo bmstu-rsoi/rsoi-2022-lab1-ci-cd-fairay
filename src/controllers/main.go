@@ -29,5 +29,5 @@ func InitRouter(db *gorm.DB) *mux.Router {
 func RunRouter(r *mux.Router, port uint16) error {
 	c := cors.New(cors.Options{})
 	handler := c.Handler(r)
-	return http.ListenAndServe(fmt.Sprintf(":%d", port), handler)
+	return http.ListenAndServe(fmt.Sprintf("0.0.0.0:%d", port), handler)
 }
